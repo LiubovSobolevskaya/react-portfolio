@@ -1,10 +1,9 @@
 {
   "name": "react-portfolio",
   "version": "1.0.0",
-  "description": "15th Assignment of UCB Extension Web Development Bootcamp",
+  "description": "Liubov Sobolevskaya's portfolio",
   "main": "index.js",
   "scripts": {
-    "homepage": "https://liubovsobolevskaya.github.io/react-portfolio",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
@@ -21,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/LiubovSobolevskaya/react-portfolio/issues"
   },
-  "homepage": "https://github.com/LiubovSobolevskaya/react-portfolio",
+  "homepage": "https://liubovsobolevskaya.github.io/react-portfolio",
   "dependencies": {
     "bootstrap": "^4.6.2",
     "gh-pages": "^5.0.0",

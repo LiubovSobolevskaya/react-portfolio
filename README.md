@@ -1,7 +1,7 @@
 # React Portfolio
 15th Assignment of UCB Extension Web Development Bootcamp
 
-Please see the [deployed website]()
+Please see the [deployed website](https://liubovsobolevskaya.github.io/react-portfolio)
 
 ## Description
 
@@ -11,7 +11,7 @@ If you click on any of the navigation titles, the corresponding section appears 
 
 In the "Portfolio" section, you will see titled images of six applications developed by the developer. These images link to both the deployed applications and the corresponding GitHub repositories. In the "Contact" section, there is a form with fields for name, email address, and a message. If you move your cursor out of any of the form fields without entering any text, you will receive a notification that the field is required. If you enter text in the email address field, you will be notified if the email address is invalid.
 
-The "Resume" section contains a link to download the developer's resume and a list of their skills and proficiencies. Lastly, in the footer of the page, you will find text or icon links to the developer's profiles on GitHub, LinkedIn, and another platform like Stack Overflow or Twitter.
+The "Resume" section contains a link to download the developer's resume and a list of their skills and proficiencies. Lastly, in the footer of the page, you will find text or icon links to the developer's profiles on GitHub, LinkedIn, and Kaggle.
 
 ---
 ## Appearance and Functionality
@@ -24,6 +24,12 @@ The "Resume" section contains a link to download the developer's resume and a li
 - [Node.js](https://nodejs.dev/)
 - [React](https://react.dev/)
 
+## Requirements
+
+```
+npm run start
+```
+
 
 ## Author Info
 
@@ -33,4 +39,4 @@ The "Resume" section contains a link to download the developer's resume and a li
 - [Github](https://github.com/LiubovSobolevskaya)
 - [Kaggle](https://www.kaggle.com/lyubovsobolevskaya)
 
-# deploy-me
+
