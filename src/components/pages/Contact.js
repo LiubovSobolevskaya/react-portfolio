@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const styles = {
   h1: {
     fontSize: '40px',
@@ -31,7 +32,7 @@ const styles = {
     borderRadius: '4px',
   },
   error: {
-    color: '#F9D4BB',
+    color: 'red',
     fontSize: '14px',
   },
   submitButton: {
@@ -41,66 +42,118 @@ const styles = {
     padding: '10px 20px',
     borderRadius: '4px',
     cursor: 'pointer',
+    margin: "10px"
   },
 };
+
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    if (name === 'name') {
-      setName(value);
-    } else if (name === 'email') {
-      setEmail(value);
-    } else if (name === 'message') {
-      setMessage(value);
-    }
-  };
-
-  const validateForm = () => {
-    let errors = {};
+  const canSubmit = () => {
+    let formErrors = {};
 
     if (!name.trim()) {
-      errors.name = 'Name is required';
+      return false;
     }
 
     if (!email.trim()) {
-      errors.email = 'Email is required';
+      return false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = 'Invalid email address';
+      return false;
     }
 
     if (!message.trim()) {
-      errors.message = 'Message is required';
+      return false;
     }
 
-    setErrors(errors);
+    return true;
+  };
 
-    return Object.keys(errors).length === 0;
+
+  const validateForm = () => {
+    let formErrors = {};
+
+    if (!name.trim()) {
+      formErrors.name = 'Name is required';
+    }
+
+    if (!email.trim()) {
+      formErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      formErrors.email = 'Invalid email address';
+    }
+
+    if (!message.trim()) {
+      formErrors.message = 'Message is required';
+    }
+
+    setErrors(formErrors);
+
+    return Object.keys(formErrors).length === 0;
+  };
+
+  const handleBlur = (e) => {
+    let formErrors = {};
+    const { name, value } = e.target;
+    if (name === 'email') {
+      if (!/\S+@\S+\.\S+/.test(value)) {
+        formErrors.email = 'Please enter a valid email address';
+      } else {
+        setEmail(value);
+      }
+    } else if (name === 'name') {
+      if (!value.length) {
+        formErrors.name = 'Name is required';
+      } else {
+        setName(value);
+      }
+    } else if (name === 'message') {
+      if (!value.length) {
+        formErrors.message = 'Message is required';
+      } else {
+        setMessage(value);
+      }
+
+    }
+    setErrors(formErrors);
+    if (canSubmit()) {
+      setDisabled(false);
+    }
+
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
+      setDisabled(false);
       // Perform form submission logic here
       console.log('Form submitted successfully!');
       setName('');
       setEmail('');
       setMessage('');
       setErrors({});
+      setSubmitted(true);
+      setTimeout(() => { setSubmitted(false); }, 2000);
+
     }
+
+
   };
 
-  return (
 
+  return (
     <div>
-      <h1 className="text-center" style={styles.h1}>Contact Page</h1>
+      <h1 className="text-center" style={styles.h1}>
+        Contact Page
+      </h1>
       <div style={styles.formContainer}>
         <form onSubmit={handleSubmit}>
           <div>
@@ -112,7 +165,8 @@ export default function Contact() {
               id="name"
               name="name"
               value={name}
-              onChange={handleInputChange}
+              onBlur={handleBlur}
+              onChange={(e) => setName(e.target.value)} // Add onChange event handler
               style={styles.input}
             />
             {errors.name && <span style={styles.error}>{errors.name}</span>}
@@ -126,7 +180,8 @@ export default function Contact() {
               id="email"
               name="email"
               value={email}
-              onChange={handleInputChange}
+              onBlur={handleBlur}
+              onChange={(e) => setEmail(e.target.value)}
               style={styles.input}
             />
             {errors.email && <span style={styles.error}>{errors.email}</span>}
@@ -139,14 +194,16 @@ export default function Contact() {
               id="message"
               name="message"
               value={message}
-              onChange={handleInputChange}
+              onBlur={handleBlur}
+              onChange={(e) => setMessage(e.target.value)}
               style={styles.textarea}
             ></textarea>
             {errors.message && <span style={styles.error}>{errors.message}</span>}
           </div>
-          <button type="submit" disabled={isSubmitting} style={styles.submitButton}>
+          <button type="submit" disabled={disabled} style={styles.submitButton}>
             Submit
           </button>
+          {submitted && <span style={styles.error}>Form submitted successfully!</span>}
         </form>
       </div>
     </div>

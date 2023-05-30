@@ -5,7 +5,7 @@ const styles = {
     backgroundColor: '#F0E2A3',
     padding: '20px',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   h1: {
@@ -17,17 +17,19 @@ const styles = {
   },
   navLink: {
     textDecoration: 'none',
-    color: '#C1D37F',
+    color: '#664E4C',
     fontFamily: 'Verdana, sans-serif',
     margin: '0 10px',
   },
   activeNavLink: {
     textDecoration: 'none',
-    color: '#E2D58B',
+    color: '#664E4C',
     fontFamily: 'Helvetica, Arial, sans-serif',
     margin: '0 10px',
+    fontWeight: 'bold',
   },
 };
+
 
 function NavTabs({ currentPage, handlePageChange }) {
   return (
