@@ -1,59 +1,72 @@
 import React from 'react';
+
 const styles = {
+  navTabs: {
+    backgroundColor: '#F0E2A3',
+    padding: '20px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   h1: {
     fontSize: '40px',
-    margin: '20px',
-    color: '#333',
+    margin: '0',
+    fontFamily: 'Arial, sans-serif',
+    color: '#664E4C',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
-
+  navLink: {
+    textDecoration: 'none',
+    color: '#C1D37F',
+    fontFamily: 'Verdana, sans-serif',
+    margin: '0 10px',
+  },
+  activeNavLink: {
+    textDecoration: 'none',
+    color: '#E2D58B',
+    fontFamily: 'Helvetica, Arial, sans-serif',
+    margin: '0 10px',
+  },
 };
+
 function NavTabs({ currentPage, handlePageChange }) {
   return (
-    <div className="d-flex justify-content-between align-items-center">
+    <div style={styles.navTabs}>
       <h1 style={styles.h1}>Liubov Sobolevskaya</h1>
-      <ul className="nav nav-tabs justify-content-end">
-        <li className="nav-item">
-          <a
-            href="#about"
-            onClick={() => handlePageChange('About')}
-            className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            About
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#portfolio"
-            onClick={() => handlePageChange('Portfolio')}
-            className={currentPage === 'Portfolio' ? 'nav-link active' : 'nav-link'}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            Portfolio
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#resume"
-            onClick={() => handlePageChange('Resume')}
-            className={currentPage === 'Resume' ? 'nav-link active' : 'nav-link'}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            Resume
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#contact"
-            onClick={() => handlePageChange('Contact')}
-            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
+      <div>
+        <a
+          href="#about"
+          onClick={() => handlePageChange('About')}
+          className={currentPage === 'About' ? 'active' : ''}
+          style={currentPage === 'About' ? styles.activeNavLink : styles.navLink}
+        >
+          About
+        </a>
+        <a
+          href="#portfolio"
+          onClick={() => handlePageChange('Portfolio')}
+          className={currentPage === 'Portfolio' ? 'active' : ''}
+          style={currentPage === 'Portfolio' ? styles.activeNavLink : styles.navLink}
+        >
+          Portfolio
+        </a>
+        <a
+          href="#resume"
+          onClick={() => handlePageChange('Resume')}
+          className={currentPage === 'Resume' ? 'active' : ''}
+          style={currentPage === 'Resume' ? styles.activeNavLink : styles.navLink}
+        >
+          Resume
+        </a>
+        <a
+          href="#contact"
+          onClick={() => handlePageChange('Contact')}
+          className={currentPage === 'Contact' ? 'active' : ''}
+          style={currentPage === 'Contact' ? styles.activeNavLink : styles.navLink}
+        >
+          Contact
+        </a>
+      </div>
     </div>
   );
 }

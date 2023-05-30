@@ -6,36 +6,38 @@ import About from './pages/About';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 
-//import logo from './logo.svg';
+const styles = {
+  all: {
+    background: '#F9D4BB',
+  },
+  container: {
+
+    minHeight: 'calc(100vh - 100px)',
+  },
+};
+
 export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
 
-  // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
   const renderPage = () => {
     if (currentPage === 'About') {
       return <About />;
     }
-    if (currentPage === 'Home') {
+    if (currentPage === 'Portfolio') {
       return <Portfolio />;
     }
-    if (currentPage === 'Blog') {
+    if (currentPage === 'Resume') {
       return <Resume />;
     }
     return <Contact />;
   };
 
-
-
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
-      {/* <img src={logo} className="App-logo" alt="logo" />*/}
-      {/* We are passing the currentPage from state and the function to update it */}
+    <div style={styles.all}>
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      {/* Here we are calling the renderPage method which will return a component  */}
-
-      <div style={{ minHeight: 'calc(100vh - 100px)' }}>{renderPage()}</div>
+      <div style={styles.container}>{renderPage()}</div>
       <Footer />
     </div>
   );

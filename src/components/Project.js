@@ -9,18 +9,14 @@ const styles = {
 function Project({ image, title, deployedLink, githubLink }) {
     return (
         <div>
-            <img style={styles.projectImage} src={image} alt={title} />
-            <h3>{title}</h3>
-            <p>
-                <a href={deployedLink} target="_blank" rel="noopener noreferrer">
-                    Deployed Application
-                </a>
-            </p>
-            <p>
+            <a href={deployedLink} target="_blank" rel="noopener noreferrer">
+                <img style={styles.projectImage} src={image} alt={title} />
+            </a>
+            <h3>
                 <a href={githubLink} target="_blank" rel="noopener noreferrer">
-                    GitHub Repository
+                    {title}
                 </a>
-            </p>
+            </h3>
         </div>
     );
 }

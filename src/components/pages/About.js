@@ -26,7 +26,7 @@ const styles = {
 export default function About() {
   return (
     <div>
-      <h1 style={styles.h1}>About Me</h1>
+      <h1 className="text-center" style={styles.h1}>About Me</h1>
       <div className="row justify-content-center">
         <div className="col-lg-3 col-md-3 col-sm-6 col-6">
           <img src={photo} className="img-fluid" alt="Profile" style={styles.image} />

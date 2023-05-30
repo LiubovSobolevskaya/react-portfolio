@@ -2,9 +2,10 @@ import React from 'react';
 import kaggle from '../assets/kaggle.png';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedIn.png';
+
 const styles = {
     footer: {
-        background: 'rgb(242, 177, 234)',
+        background: '#C1D37F',
         bottom: '0',
         left: '0',
         width: '100%',
@@ -16,6 +17,10 @@ const styles = {
         width: '50px',
         height: '50px',
         margin: '0 10px',
+        transition: 'transform 0.3s',
+    },
+    imageHover: {
+        transform: 'scale(1.2)',
     },
     headerStyle: {
         background: 'red',
@@ -50,15 +55,29 @@ const images = [
     { name: 'Kaggle', path: kaggle },
 ];
 
-
 export default function Footer() {
+    const handleImageHover = (e) => {
+        e.target.style.transform = 'scale(1.2)';
+    };
+
+    const handleImageHoverEnd = (e) => {
+        e.target.style.transform = 'scale(1)';
+    };
+
     return (
         <div style={styles.footer}>
             <ul style={styles.linksUl}>
                 {images.map((image, index) => (
                     <li key={index} className="d-inline">
                         <a href="#" className="text-white">
-                            <img src={image.path} alt={image.name} className="img-fluid" style={styles.image} />
+                            <img
+                                src={image.path}
+                                alt={image.name}
+                                className="img-fluid"
+                                style={styles.image}
+                                onMouseEnter={handleImageHover}
+                                onMouseLeave={handleImageHoverEnd}
+                            />
                         </a>
                     </li>
                 ))}
@@ -66,4 +85,3 @@ export default function Footer() {
         </div>
     );
 }
-
