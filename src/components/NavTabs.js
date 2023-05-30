@@ -1,9 +1,17 @@
 import React from 'react';
+const styles = {
+  h1: {
+    fontSize: '40px',
+    margin: '20px',
+    color: '#333',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+  },
 
+};
 function NavTabs({ currentPage, handlePageChange }) {
   return (
     <div className="d-flex justify-content-between align-items-center">
-      <h1 style={{ fontSize: '40px' }}>Liubov Sobolevskaya</h1>
+      <h1 style={styles.h1}>Liubov Sobolevskaya</h1>
       <ul className="nav nav-tabs justify-content-end">
         <li className="nav-item">
           <a
