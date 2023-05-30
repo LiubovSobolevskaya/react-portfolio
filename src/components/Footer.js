@@ -5,7 +5,6 @@ import linkedin from '../assets/linkedIn.png';
 const styles = {
     footer: {
         background: 'rgb(242, 177, 234)',
-        position: 'fixed',
         bottom: '0',
         left: '0',
         width: '100%',
