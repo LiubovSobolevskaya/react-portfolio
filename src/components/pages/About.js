@@ -16,8 +16,8 @@ const styles = {
   paragraph: {
     fontSize: '20px',
     lineHeight: '1.6',
-    backgroundColor: '#f7f7f7',
-    padding: '20px',
+    backgroundColor: '#E2D58B',
+    margin: '20px',
     borderRadius: '10px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   },
@@ -31,10 +31,15 @@ export default function About() {
         <div className="col-lg-3 col-md-3 col-sm-6 col-6">
           <img src={photo} className="img-fluid" alt="Profile" style={styles.image} />
         </div>
-        <div className="col-lg-8 col-md-8 col-sm-12 col-12">
-          <p style={styles.paragraph}>
-            Looking for a challenging and dynamic position in a reputable organization where my skills and abilities can be utilized to their fullest potential, while also providing me with opportunities for professional and personal growth. I am eager to apply my experience and knowledge in a collaborative environment, while also learning and adapting to new challenges and responsibilities.
-          </p>
+        <div className="col-lg-8 col-md-8 col-sm-12 col-12" style={styles.paragraph}>
+          <p >
+            I am a highly motivated individual with a master's degree in Mathematics, seeking a challenging and dynamic
+            position in a reputable organization. With a strong foundation in mathematical principles,
+            I bring a unique analytical mindset to problem-solving. Proficient in Python, JavaScript, C/C++, SQL, and MongoDB,
+            I have hands-on experience in both backend and frontend development. I am passionate about creating efficient and
+            scalable solutions and have a keen eye for detail. I thrive in a collaborative environment, leveraging my skills and
+            knowledge while continuously learning and adapting to new challenges and responsibilities.
+            I am excited to contribute my expertise and contribute to the professional and personal growth of the organization.          </p>
         </div>
       </div>
     </div>

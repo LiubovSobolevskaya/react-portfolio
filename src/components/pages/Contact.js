@@ -98,27 +98,27 @@ export default function Contact() {
 
   const handleBlur = (e) => {
     let formErrors = {};
-    const { name, value } = e.target;
-    if (name === 'email') {
-      if (!email.trim()) {
+
+    if (e.target.name === 'email') {
+      if (!e.target.value.length) {
         formErrors.email = 'Email is required';
       }
-      else if (!/\S+@\S+\.\S+/.test(value)) {
+      else if (!/\S+@\S+\.\S+/.test(e.target.value)) {
         formErrors.email = 'Please enter a valid email address';
       } else {
-        setEmail(value);
+        setEmail(e.target.value);
       }
-    } else if (name === 'name') {
-      if (!value.length) {
+    } else if (e.target.name === 'name') {
+      if (!e.target.value.length) {
         formErrors.name = 'Name is required';
       } else {
-        setName(value);
+        setName(e.target.value);
       }
-    } else if (name === 'message') {
-      if (!value.length) {
+    } else if (e.target.name === 'message') {
+      if (!e.target.value.length) {
         formErrors.message = 'Message is required';
       } else {
-        setMessage(value);
+        setMessage(e.target.value);
       }
 
     }

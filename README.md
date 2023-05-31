@@ -15,7 +15,7 @@ The "Resume" section contains a link to download the developer's resume and a li
 
 ---
 ## Appearance and Functionality
-![]()
+![](assets/apperance.gif)
 
 ## Technology Used
 
@@ -23,12 +23,6 @@ The "Resume" section contains a link to download the developer's resume and a li
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.dev/)
 - [React](https://react.dev/)
-
-## Requirements
-
-```
-npm run start
-```
 
 
 ## Author Info
@@ -39,4 +33,4 @@ npm run start
 - [Github](https://github.com/LiubovSobolevskaya)
 - [Kaggle](https://www.kaggle.com/lyubovsobolevskaya)
 
-
+I would like to express my gratitude to James Harding for helping me to make my resume downloadable.
