@@ -54,7 +54,7 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [disabled, setDisabled] = useState(true);
   const [submitted, setSubmitted] = useState(false);
-
+  // Function to check if the form can be submitted
   const canSubmit = () => {
     let formErrors = {};
 
@@ -73,7 +73,7 @@ export default function Contact() {
     return true;
   };
 
-
+  // Function to validate the form 
   const validateForm = () => {
     let formErrors = {};
 
@@ -95,25 +95,28 @@ export default function Contact() {
 
     return Object.keys(formErrors).length === 0;
   };
-
+  // Event handler for input blur
   const handleBlur = (e) => {
     let formErrors = {};
-
+    // Check if the blurred input is email
     if (e.target.name === 'email') {
       if (!e.target.value.length) {
         formErrors.email = 'Email is required';
       }
+      // Check if the email format is valid
       else if (!/\S+@\S+\.\S+/.test(e.target.value)) {
         formErrors.email = 'Please enter a valid email address';
       } else {
         setEmail(e.target.value);
       }
+      // Check if the blurred input is name
     } else if (e.target.name === 'name') {
       if (!e.target.value.length) {
         formErrors.name = 'Name is required';
       } else {
         setName(e.target.value);
       }
+      // Check if the blurred input is message
     } else if (e.target.name === 'message') {
       if (!e.target.value.length) {
         formErrors.message = 'Message is required';
@@ -123,20 +126,19 @@ export default function Contact() {
 
     }
     setErrors(formErrors);
+    // Enable the submit button if the form is valid
     if (canSubmit()) {
       setDisabled(false);
     }
 
 
   };
-
+  // Event handler for form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       setDisabled(false);
-      // Perform form submission logic here
-      console.log('Form submitted successfully!');
       setName('');
       setEmail('');
       setMessage('');
@@ -169,7 +171,7 @@ export default function Contact() {
               name="name"
               value={name}
               onBlur={handleBlur}
-              onChange={(e) => setName(e.target.value)} // Add onChange event handler
+              onChange={(e) => setName(e.target.value)} //  onChange event handler
               style={styles.input}
             />
             {errors.name && <span style={styles.error}>{errors.name}</span>}
@@ -184,7 +186,7 @@ export default function Contact() {
               name="email"
               value={email}
               onBlur={handleBlur}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)} //  onChange event handler
               style={styles.input}
             />
             {errors.email && <span style={styles.error}>{errors.email}</span>}
@@ -198,7 +200,7 @@ export default function Contact() {
               name="message"
               value={message}
               onBlur={handleBlur}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)} //  onChange event handler
               style={styles.textarea}
             ></textarea>
             {errors.message && <span style={styles.error}>{errors.message}</span>}

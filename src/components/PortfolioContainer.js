@@ -20,6 +20,7 @@ export default function PortfolioContainer() {
   const [currentPage, setCurrentPage] = useState('Home');
 
   const renderPage = () => {
+    // Check the value of currentPage and render the corresponding component
     if (currentPage === 'Contact') {
       return <Contact />;
     }
@@ -29,9 +30,9 @@ export default function PortfolioContainer() {
     if (currentPage === 'Resume') {
       return <Resume />;
     }
+    // If none of the above conditions match, render the About component
     return <About />;
   };
-
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (

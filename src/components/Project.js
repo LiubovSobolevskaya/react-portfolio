@@ -39,11 +39,11 @@ const styles = {
 
 function Project({ image, title, deployedLink, githubLink }) {
     const [isHovered, setIsHovered] = React.useState(false);
-
+    // Event handler for mouse enter
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
-
+    // Event handler for mouse leave
     const handleMouseLeave = () => {
         setIsHovered(false);
     };

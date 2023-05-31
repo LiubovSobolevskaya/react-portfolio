@@ -57,13 +57,14 @@ const images = [
 
 export default function Footer() {
     const handleImageHover = (e) => {
+        // Event handler for image hover
         e.target.style.transform = 'scale(1.2)';
     };
 
     const handleImageHoverEnd = (e) => {
+        // Event handler for ending image hover
         e.target.style.transform = 'scale(1)';
     };
-
     return (
         <div style={styles.footer}>
             <ul style={styles.linksUl}>

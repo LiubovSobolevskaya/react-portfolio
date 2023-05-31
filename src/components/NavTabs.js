@@ -29,6 +29,7 @@ const styles = {
     fontFamily: 'Helvetica, Arial, sans-serif',
     margin: '20px',
     fontWeight: 'bold',
+
   },
   navigation: {
     display: 'flex',
