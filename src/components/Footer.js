@@ -50,9 +50,9 @@ const styles = {
 };
 
 const images = [
-    { name: 'GitHub', path: github },
-    { name: 'LinkedIn', path: linkedin },
-    { name: 'Kaggle', path: kaggle },
+    { name: 'GitHub', path: github, url: 'https://github.com/LiubovSobolevskaya' },
+    { name: 'LinkedIn', path: linkedin, url: 'https://www.linkedin.com/in/liubov-sobolevskaya/' },
+    { name: 'Kaggle', path: kaggle, url: 'https://www.kaggle.com/lyubovsobolevskaya' },
 ];
 
 export default function Footer() {
@@ -69,7 +69,7 @@ export default function Footer() {
             <ul style={styles.linksUl}>
                 {images.map((image, index) => (
                     <li key={index} className="d-inline">
-                        <a href="#" className="text-white">
+                        <a href={image.url} className="text-white" target='_blank' rel="noopener noreferrer" >
                             <img
                                 src={image.path}
                                 alt={image.name}

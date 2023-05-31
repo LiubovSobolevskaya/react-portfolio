@@ -12,7 +12,7 @@ const styles = {
   h1: {
     fontSize: '40px',
     margin: '20px',
-    color: '#333',
+    color: '#664E4C',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
 }

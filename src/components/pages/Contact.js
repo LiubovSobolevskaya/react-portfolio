@@ -5,11 +5,11 @@ const styles = {
   h1: {
     fontSize: '40px',
     margin: '20px',
-    color: '#333',
+    color: '#664E4C',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
   formContainer: {
-    maxWidth: '600px',
+    maxWidth: '60%',
     margin: '0 auto',
   },
   label: {
@@ -19,7 +19,7 @@ const styles = {
   input: {
     width: '100%',
     padding: '10px',
-    marginBottom: '10px',
+    margin: '10px',
     border: '1px solid #E2D58B',
     borderRadius: '4px',
   },
@@ -27,7 +27,7 @@ const styles = {
     width: '100%',
     height: '200px',
     padding: '10px',
-    marginBottom: '10px',
+    margin: '10px',
     border: '1px solid #E2D58B',
     borderRadius: '4px',
   },
@@ -36,7 +36,7 @@ const styles = {
     fontSize: '14px',
   },
   submitButton: {
-    background: '#F0E2A3',
+    background: '#E2D58B',
     color: '#664E4C',
     border: 'none',
     padding: '10px 20px',
@@ -63,8 +63,6 @@ export default function Contact() {
     }
 
     if (!email.trim()) {
-      return false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
       return false;
     }
 
@@ -102,7 +100,10 @@ export default function Contact() {
     let formErrors = {};
     const { name, value } = e.target;
     if (name === 'email') {
-      if (!/\S+@\S+\.\S+/.test(value)) {
+      if (!email.trim()) {
+        formErrors.email = 'Email is required';
+      }
+      else if (!/\S+@\S+\.\S+/.test(value)) {
         formErrors.email = 'Please enter a valid email address';
       } else {
         setEmail(value);
@@ -141,7 +142,7 @@ export default function Contact() {
       setMessage('');
       setErrors({});
       setSubmitted(true);
-      setTimeout(() => { setSubmitted(false); }, 2000);
+      setTimeout(() => { setSubmitted(false); }, 3000);
 
     }
 
@@ -154,7 +155,9 @@ export default function Contact() {
       <h1 className="text-center" style={styles.h1}>
         Contact Page
       </h1>
+
       <div style={styles.formContainer}>
+        <p>Email :<a href="mailto:lubva39@gmail.com">   Email me</a></p>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" style={styles.label}>
@@ -203,7 +206,7 @@ export default function Contact() {
           <button type="submit" disabled={disabled} style={styles.submitButton}>
             Submit
           </button>
-          {submitted && <span style={styles.error}>Form submitted successfully!</span>}
+          {submitted && <span style={styles.error}>Form submitted successfully! Not true. This part has not been implemented. Just send me an email!</span>}
         </form>
       </div>
     </div>

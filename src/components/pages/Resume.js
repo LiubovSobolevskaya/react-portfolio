@@ -1,115 +1,90 @@
 import React from 'react';
-import axios from 'axios';
+import resume from '../../assets/ResumeSobolevskaya.pdf';
+import downloadImg from '../../assets/download.png';
 const styles = {
   h1: {
     fontSize: '40px',
-    margin: '20px',
-    color: '#333',
+    margin: '20px auto', // Center horizontally
+    color: '#664E4C',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
-}
+  resumepage: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center', // Center horizontally
+  },
+  button: {
+    fontSize: '40px',
+    margin: '20px auto', // Center horizontally
+    background: '#E2D58B',
+    color: '#664E4C',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+  },
+  skillList: {
+    margin: '0 auto', // Center horizontally
+  },
+  skillListTitle: {
+    fontSize: '24px',
+    fontFamily: 'Arial, sans-serif',
+    color: '#664E4C',
+    margin: '10px',
+  },
+  skillListItems: {
+    listStyleType: 'none',
+    margin: '10px',
+  },
+  skillListItem: {
+    fontFamily: 'Verdana, sans-serif',
+    fontSize: '18px',
+    color: '#664E4C',
+    marginBottom: '10px',
+  },
+};
+
+const handleDownload = () => {
+  // Replace 'path/to/pdf/file.pdf' with the actual path to your PDF file
+  const fileUrl = resume;
+
+  // Create a temporary link element
+  const link = document.createElement('a');
+  link.href = fileUrl;
+  link.target = '_blank'; // Open the PDF file in a new tab
+  link.download = 'Sobolevskaya.pdf'; // Set the default file name
+
+  // Trigger the download by programmatically clicking the link
+  link.click();
+};
+
 export default function Resume() {
+  const backendSkills = ['Node.js', 'Express.js', 'MongoDB', 'Python', 'MySql'];
+  const frontendSkills = ['HTML', 'CSS', 'JavaScript', 'React'];
   return (
-    <div>
-      <h1 className="text-center" style={styles.h1} >Resume</h1>
-      <p>
-        <a href="https://drive.google.com/file/d/1Pq8EuNUu6ZhLpfmN-IU0XpYSX9Xy_ZSG/view?usp=sharing" download>
-          Download Resume
-        </a>
-      </p>
+    <div style={styles.resumepage}>
+      <h1 className="text-center" style={styles.h1}  >Resume</h1>
+      <button style={styles.button} onClick={handleDownload}>Download Resume <span> <img
+        src={downloadImg} /></span></button>
+      <div style={styles.skillList}>
+        <div>
+          <h2 style={styles.skillListTitle}>Back-end Skills:</h2>
+          <ul style={styles.skillListItems}>
+            {backendSkills.map((skill, index) => (
+              <li key={index} style={styles.skillListItem}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 style={styles.skillListTitle}>Front-end Skills:</h2>
+          <ul style={styles.skillListItems}>
+            {frontendSkills.map((skill, index) => (
+              <li key={index} style={styles.skillListItem}>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
+
+
+
   );
 }
-// // import React from 'react';
-
-// // export default function Resume() {
-// //   const handleDownload = () => {
-// //     // Replace 'path/to/pdf/file.pdf' with the actual path to your PDF file
-// //     const fileUrl = 'https://drive.google.com/file/d/1Pq8EuNUu6ZhLpfmN-IU0XpYSX9Xy_ZSG/view?usp=sharing';
-
-// //     // Create a temporary link element
-// //     const link = document.createElement('a');
-// //     link.href = fileUrl;
-// //     link.target = '_blank'; // Open the PDF file in a new tab
-// //     link.download = 'Sobolevskaya.pdf'; // Set the default file name
-
-// //     // Trigger the download by programmatically clicking the link
-// //     link.click();
-// //   };
-
-// //   return (
-// //     <div>
-// //       <h1>Download PDF</h1>
-// //       <button onClick={handleDownload}>Download</button>
-// //     </div>
-// //   );
-// // }
-
-// //import React from 'react';
-
-// // export default function DownloadPDF() {
-// //   const handleDownload = () => {
-
-// //     const fileUrl = '../../assets/ResumeSobolevskaya.pdf';
-
-// //     // Create an anchor element
-// //     const link = document.createElement('a');
-// //     link.href = fileUrl;
-// //     link.download = 'file.pdf'; // Specify the desired file name
-
-// //     // Append the link to the document body
-// //     document.body.appendChild(link);
-
-// //     // Programmatically click the link to trigger the download
-// //     link.click();
-
-// //     // Remove the link from the document body after the download
-// //     document.body.removeChild(link);
-// //   };
-
-// //   return (
-// //     <div>
-// //       <h1>Download PDF</h1>
-// //       <button onClick={handleDownload}>Download</button>
-// //     </div>
-// //   );
-// // }
-
-
-// export default function DownloadPDF() {
-//   const handleDownload = async () => {
-//     try {
-//       // Replace 'path/to/pdf/file.pdf' with the actual path to your PDF file
-//       const fileUrl = 'https://drive.google.com/file/d/1Pq8EuNUu6ZhLpfmN-IU0XpYSX9Xy_ZSG/view?usp=sharing';
-
-//       // Fetch the PDF file as a blob
-//       const response = await axios.get(fileUrl, {
-//         responseType: 'blob',
-//       });
-//       console.log(response);
-//       const blobUrl = URL.createObjectURL(response.data);
-
-
-
-//       // Create an anchor element
-//       const link = document.createElement('a');
-//       link.href = blobUrl;
-//       link.download = 'file.pdf'; // Specify the desired file name
-
-//       // Programmatically click the link to trigger the download
-//       link.click();
-
-//       // Clean up the blob URL
-//       URL.revokeObjectURL(blobUrl);
-//     } catch (error) {
-//       console.error('Failed to download the PDF:', error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h1>Download PDF</h1>
-//       <button onClick={handleDownload}>Download</button>
-//     </div>
-//   );
-// }

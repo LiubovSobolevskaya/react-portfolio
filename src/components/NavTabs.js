@@ -2,32 +2,41 @@ import React from 'react';
 
 const styles = {
   navTabs: {
-    backgroundColor: '#F0E2A3',
+    backgroundColor: '#F9D4BB',
     padding: '20px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    flexWrap: 'wrap'
   },
   h1: {
     fontSize: '40px',
-    margin: '0',
     fontFamily: 'Arial, sans-serif',
     color: '#664E4C',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
   },
   navLink: {
+    fontSize: '20px',
     textDecoration: 'none',
     color: '#664E4C',
     fontFamily: 'Verdana, sans-serif',
-    margin: '0 10px',
+    margin: '20px',
   },
   activeNavLink: {
+    fontSize: '20px',
     textDecoration: 'none',
     color: '#664E4C',
     fontFamily: 'Helvetica, Arial, sans-serif',
-    margin: '0 10px',
+    margin: '20px',
     fontWeight: 'bold',
   },
+  navigation: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginLeft: '200px',
+    alignItems: 'right',
+    justifyContent: 'right',
+  }
 };
 
 
@@ -35,7 +44,7 @@ function NavTabs({ currentPage, handlePageChange }) {
   return (
     <div style={styles.navTabs}>
       <h1 style={styles.h1}>Liubov Sobolevskaya</h1>
-      <div>
+      <div style={styles.navigation}>
         <a
           href="#about"
           onClick={() => handlePageChange('About')}
