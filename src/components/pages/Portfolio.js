@@ -3,7 +3,7 @@ import React from 'react';
 import Project from '../Project';
 import emojify from '../../assets/Emojify.gif';
 import recipeBox from '../../assets/recipeBox.gif';
-import finlay from '../../assets/Finlay.jpg';
+import clubhub from '../../assets/clubhub.gif';
 import cat from '../../assets/cat.jpg';
 import finn from '../../assets/finn.jpg';
 import codeQuiz from '../../assets/codeQuiz.gif';
@@ -19,6 +19,13 @@ const styles = {
 
 export default function Portfolio() {
   const projects = [
+    {
+      name: "Club Hub",
+      gitHub: "https://github.com/tdusenbury/Club-Hub",
+      deployedLink: "https://clubhub.herokuapp.com/",
+      img: clubhub
+
+    },
     {
       name: "Recipe Box",
       gitHub: "https://github.com/Berkeleycodingmomma/recepie-box/",
@@ -36,13 +43,6 @@ export default function Portfolio() {
       gitHub: "https://github.com/LiubovSobolevskaya/code-quiz",
       deployedLink: "https://liubovsobolevskaya.github.io/code-quiz/",
       img: codeQuiz
-    },
-    {
-      name: "One more project",
-      gitHub: "https://www.tiktok.com/@finlaythecat/video/7032088646257855749",
-      deployedLink: "https://www.tiktok.com/@finlaythecat/video/7032088646257855749",
-      img: finlay
-
     },
     {
       name: "Project not yet done",
