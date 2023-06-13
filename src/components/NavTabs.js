@@ -70,14 +70,14 @@ function NavTabs({ currentPage, handlePageChange }) {
         >
           Resume
         </a>
-        <a
+        {/* <a
           href="#contact"
           onClick={() => handlePageChange('Contact')}
           className={currentPage === 'Contact' ? 'active' : ''}
           style={currentPage === 'Contact' ? styles.activeNavLink : styles.navLink}
         >
           Contact
-        </a>
+        </a> */}
       </div>
     </div>
   );

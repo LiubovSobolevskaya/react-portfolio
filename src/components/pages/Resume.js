@@ -56,8 +56,8 @@ const handleDownload = () => {
 };
 
 export default function Resume() {
-  const backendSkills = ['Node.js', 'Express.js', 'MongoDB', 'Python', 'MySql'];
-  const frontendSkills = ['HTML', 'CSS', 'JavaScript', 'React'];
+  const backendSkills = ['Node.js', 'Express.js', 'MongoDB', 'Python', 'MySql', 'MongoDB', 'Apollo GraphQL'];
+  const frontendSkills = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'];
   return (
     <div style={styles.resumepage}>
       <h1 className="text-center" style={styles.h1}  >Resume</h1>
