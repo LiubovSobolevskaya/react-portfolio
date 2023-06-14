@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.4169f80c.css",
-    "main.js": "/react-portfolio/static/js/main.af2997c6.js",
+    "main.js": "/react-portfolio/static/js/main.b5fe7740.js",
     "static/media/recipeBox.gif": "/react-portfolio/static/media/recipeBox.5de60de446dfd2245f1c.gif",
     "static/media/cat.jpg": "/react-portfolio/static/media/cat.94c4451cb88002f2b059.jpg",
     "static/media/Emojify.gif": "/react-portfolio/static/media/Emojify.7b346cf287470440e84c.gif",
     "static/media/finn.jpg": "/react-portfolio/static/media/finn.3b9936964142c3559112.jpg",
+    "static/media/weather-dashboard.gif": "/react-portfolio/static/media/weather-dashboard.a6d334f590cd9426e2b1.gif",
     "static/media/clubhub.gif": "/react-portfolio/static/media/clubhub.2f5632798a14696fd4da.gif",
+    "static/media/tech-blog.gif": "/react-portfolio/static/media/tech-blog.86177f5a27d02ccabecd.gif",
     "static/media/photo.jpg": "/react-portfolio/static/media/photo.735dfe306f936c7686ac.jpg",
     "static/media/codeQuiz.gif": "/react-portfolio/static/media/codeQuiz.08ac08346da83686768e.gif",
     "static/media/ResumeSobolevskaya.pdf": "/react-portfolio/static/media/ResumeSobolevskaya.dbc8317e4f57aef2fd64.pdf",
     "static/media/launch.png": "/react-portfolio/static/media/launch.02f37fb90d03684cdc73.png",
     "index.html": "/react-portfolio/index.html",
     "main.4169f80c.css.map": "/react-portfolio/static/css/main.4169f80c.css.map",
-    "main.af2997c6.js.map": "/react-portfolio/static/js/main.af2997c6.js.map"
+    "main.b5fe7740.js.map": "/react-portfolio/static/js/main.b5fe7740.js.map"
   },
   "entrypoints": [
     "static/css/main.4169f80c.css",
-    "static/js/main.af2997c6.js"
+    "static/js/main.b5fe7740.js"
   ]
 }
