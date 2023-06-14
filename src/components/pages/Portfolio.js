@@ -7,6 +7,8 @@ import clubhub from '../../assets/clubhub.gif';
 import cat from '../../assets/cat.jpg';
 import finn from '../../assets/finn.jpg';
 import codeQuiz from '../../assets/codeQuiz.gif';
+import techBlog from '../../assets/tech-blog.gif';
+import weatherDashboard from '../../assets/weather-dashboard.gif';
 
 const styles = {
   h1: {
@@ -45,16 +47,16 @@ export default function Portfolio() {
       img: codeQuiz
     },
     {
-      name: "Project not yet done",
-      gitHub: "https://www.tiktok.com/@finlaythecat/video/7002793051613629701",
-      deployedLink: "https://www.tiktok.com/@finlaythecat/video/7002793051613629701",
-      img: cat
+      name: "MVC-CMS-style-Tech-Blog",
+      gitHub: "https://github.com/LiubovSobolevskaya/MVC-CMS-style-Tech-Blog",
+      deployedLink: "https://cmslubatechblog.herokuapp.com/",
+      img: techBlog
     },
     {
-      name: "Project not yet done",
-      gitHub: "https://www.tiktok.com/@finlaythecat/video/7134206034494934318",
-      deployedLink: "https://www.tiktok.com/@finlaythecat/video/7134206034494934318",
-      img: finn
+      name: "Openweather Api Dashboard",
+      gitHub: "https://github.com/LiubovSobolevskaya/Openweather-Api-Dashboard",
+      deployedLink: "https://liubovsobolevskaya.github.io/Openweather-Api-Dashboard/",
+      img: weatherDashboard
     }
 
   ]
