@@ -37,7 +37,7 @@ const styles = {
 
 };
 
-function Project({ image, title, deployedLink, githubLink }) {
+function Project({ image, title, deployedLink, githubLink, technologies }) {
     const [isHovered, setIsHovered] = React.useState(false);
     // Event handler for mouse enter
     const handleMouseEnter = () => {
@@ -68,6 +68,7 @@ function Project({ image, title, deployedLink, githubLink }) {
                         </a >
                     </div>
                 )}
+                <p><strong>Used Technologies:</strong> {technologies} </p>
             </div>
 
 

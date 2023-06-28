@@ -4,8 +4,6 @@ import Project from '../Project';
 import emojify from '../../assets/Emojify.gif';
 import recipeBox from '../../assets/recipeBox.gif';
 import clubhub from '../../assets/clubhub.gif';
-import cat from '../../assets/cat.jpg';
-import finn from '../../assets/finn.jpg';
 import codeQuiz from '../../assets/codeQuiz.gif';
 import techBlog from '../../assets/tech-blog.gif';
 import weatherDashboard from '../../assets/weather-dashboard.gif';
@@ -25,38 +23,49 @@ export default function Portfolio() {
       name: "Club Hub",
       gitHub: "https://github.com/tdusenbury/Club-Hub",
       deployedLink: "https://clubhub.herokuapp.com/",
-      img: clubhub
+      img: clubhub,
+      technologies: "Mongoose ORM, MongoDb, React, JWT (JSON Web Tokens), Apollo GraphQL, Node.js, CSS, HTML, Anime.js"
 
     },
     {
       name: "Recipe Box",
       gitHub: "https://github.com/Berkeleycodingmomma/recepie-box/",
       deployedLink: "https://recipesbox.herokuapp.com/",
-      img: recipeBox
+      img: recipeBox,
+      technologies: "Sequalize ODM, MySQL, Handlebars, Node.js, CSS, HTML, RESTful APIs"
+
     },
     {
       name: "Emojify",
       gitHub: "https://github.com/samhiga/emojify",
       deployedLink: "https://samhiga.github.io/emojify/",
-      img: emojify
+      img: emojify,
+      technologies: "JavaScript, third-party APIs, Bulma (a CSS framework), CSS, and HTML"
+
+
     },
     {
       name: "Code Quiz",
       gitHub: "https://github.com/LiubovSobolevskaya/code-quiz",
       deployedLink: "https://liubovsobolevskaya.github.io/code-quiz/",
-      img: codeQuiz
+      img: codeQuiz,
+      technologies: "JavaScript, CSS, and HTML"
     },
     {
       name: "MVC-CMS-style-Tech-Blog",
       gitHub: "https://github.com/LiubovSobolevskaya/MVC-CMS-style-Tech-Blog",
       deployedLink: "https://cmslubatechblog.herokuapp.com/",
-      img: techBlog
+      img: techBlog,
+      technologies: "Sequalize ODM, MySQL, Handlebars, Node.js, CSS, HTML, RESTful APIs"
+
     },
     {
       name: "Openweather Api Dashboard",
       gitHub: "https://github.com/LiubovSobolevskaya/Openweather-Api-Dashboard",
       deployedLink: "https://liubovsobolevskaya.github.io/Openweather-Api-Dashboard/",
-      img: weatherDashboard
+      img: weatherDashboard,
+      technologies: "JavaScript, third-party APIs, CSS, and HTML"
+
     }
 
   ]
@@ -72,6 +81,7 @@ export default function Portfolio() {
               githubLink={project.gitHub}
               deployedLink={project.deployedLink}
               image={project.img}
+              technologies={project.technologies}
             />
           </div>
         ))}
