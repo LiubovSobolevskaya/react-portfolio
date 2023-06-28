@@ -41,6 +41,7 @@ export default function About() {
             knowledge while continuously learning and adapting to new challenges and responsibilities.
             I am excited to contribute my expertise and contribute to the professional and personal growth of the organization.          </p>
         </div>
+        <h1 className="text-center" style={styles.h1}> Email: <a href="mailto:lubava39@gmail.com">Send Email</a></h1>
       </div>
     </div>
   );

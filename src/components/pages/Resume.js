@@ -1,5 +1,5 @@
 import React from 'react';
-import resume from '../../assets/ResumeSobolevskaya.pdf';
+import resume from '../../assets/Liubov_Sobolevskaya.pdf';
 import downloadImg from '../../assets/download.png';
 const styles = {
   h1: {
@@ -81,6 +81,8 @@ export default function Resume() {
             ))}
           </ul>
         </div>
+        Email: <a href="mailto:lubava39@gmail.com">Send Email</a>
+
       </div>
     </div>
 
