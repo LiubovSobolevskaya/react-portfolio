@@ -25,7 +25,7 @@ export default function Portfolio() {
       deployedLink: "https://clubhub.herokuapp.com/",
       img: clubhub,
       technologies: "Mongoose ORM, MongoDb, React, JWT (JSON Web Tokens), Apollo GraphQL, Node.js, CSS, HTML, Anime.js",
-      summary: "A web application created to create events, and rsvp for them"
+      summary: "A web application created to create events, and rsvp for them."
 
     },
     {
@@ -34,7 +34,7 @@ export default function Portfolio() {
       deployedLink: "https://recipesbox.herokuapp.com/",
       img: recipeBox,
       technologies: "Sequalize ODM, MySQL, Handlebars, Node.js, CSS, HTML, RESTful APIs, third-party APIs",
-      summary: "An application to find a save recipes"
+      summary: "An application to find a save recipes."
 
     },
     {
@@ -43,7 +43,7 @@ export default function Portfolio() {
       deployedLink: "https://samhiga.github.io/emojify/",
       img: emojify,
       technologies: "JavaScript, third-party APIs, Bulma (a CSS framework), CSS, and HTML",
-      summary: "An application to find a movie bases on your mood"
+      summary: "An application to find a movie bases on your mood."
 
 
     },
@@ -70,7 +70,7 @@ export default function Portfolio() {
       deployedLink: "https://liubovsobolevskaya.github.io/Openweather-Api-Dashboard/",
       img: weatherDashboard,
       technologies: "JavaScript, third-party APIs, CSS, and HTML",
-      summary: "A simple weather application developed"
+      summary: "A simple weather application developed."
 
     }
 
