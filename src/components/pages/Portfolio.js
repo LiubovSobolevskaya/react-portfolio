@@ -88,6 +88,7 @@ export default function Portfolio() {
               deployedLink={project.deployedLink}
               image={project.img}
               technologies={project.technologies}
+              summary={project.summary}
             />
           </div>
         ))}
