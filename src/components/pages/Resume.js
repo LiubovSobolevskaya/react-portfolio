@@ -81,7 +81,6 @@ export default function Resume() {
             ))}
           </ul>
         </div>
-        Email: <a href="mailto:lubava39@gmail.com">Send Email</a>
 
       </div>
     </div>
